@@ -8,23 +8,25 @@ function App() {
   return (
     <div className="App">
       <h1>Weather App</h1>
-      <footer>
-        This project was coded by{" "}
-        <a href="/" className="primary-link">
-          <span
-            onMouseOver={change}
-            onMouseLeave={(displayedName) =>
-              (displayedName.target.innerHTML = `Neonita`)
-            }
-          >
-            Neonita
-          </span>
-        </a>
-        and is{" "}
-        <a href="/" target="noopener norefferer" className="primary-link">
-          open-sourced on GitHub
-        </a>
-      </footer>
+      <div className="container">
+        <footer>
+          This project was coded by{" "}
+          <a href="/" className="primary-link">
+            <span
+              onMouseOver={change}
+              onMouseLeave={(displayedName) =>
+                (displayedName.target.innerHTML = `Neonita`)
+              }
+            >
+              Neonita
+            </span>
+          </a>{" "}
+          and is{" "}
+          <a href="/" target="noopener norefferer" className="primary-link">
+            open-sourced on GitHub
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }
