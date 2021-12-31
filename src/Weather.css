@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  color: red;
+}
+
+.forecast-city {
+  text-align: right;
+}
+
+.forecast-temp {
+  display: flex;
+}
