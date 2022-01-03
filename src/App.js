@@ -8,9 +8,9 @@ function App() {
 
   return (
     <div className="App">
-      <Weather />
       <div className="container">
-        <footer>
+        <Weather />
+        <footer className="mt-3 ms-3">
           This project was coded by{" "}
           <a href="/" className="primary-link">
             <span

@@ -1,7 +1,7 @@
 .primary-link:link,
 .primary-link:visited {
   text-decoration: none;
-  color: grey;
+  color: #0d6efd;
   border-bottom: none;
   border-color: none;
   background-color: none;
@@ -12,7 +12,7 @@
 .primary-link:hover {
   /* color: pink; */
   border-bottom: 1.7px solid;
-  border-color: goldenrod;
-  background-color: rgba(218, 165, 32, 0.208);
-  color: orange;
+  border-color: #0d6dfdb6;
+  background-color: #0d6dfd1c;
+  color: #0d6efd;
 }
