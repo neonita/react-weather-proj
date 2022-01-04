@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="New York" />
         <footer className="mt-3 ms-3">
           This project was coded by{" "}
           <a href="/" className="primary-link">
