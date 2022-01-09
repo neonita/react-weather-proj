@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   // by default, weatherData is a javascript object, with a "loaded" property of a value of "false".
   const [weatherData, setWeatherData] = useState({ loaded: false });
+
+  // by default, city will be set to defaultCity and will be redefined in the handleCityInput function
+  const [city, setCity] = useState(props.defaultCity);
 
   // handle response
   function handleResponse(response) {
@@ -21,20 +24,40 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       icon: `https://ssl.gstatic.com/onebox/weather/64/snow_light.png`,
       description: response.data.weather[0].description,
+      city: response.data.name,
     });
+  }
+
+  function search() {
+    // api key and url
+    const API_KEY = `87af149f244d27dc04db018463afcdae`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+
+    // AJAX call
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function handleCityInput(event) {
+    setCity(event.target.value);
   }
 
   // The conditional is to prevent the API call from being recalled repeatedly. Unecessary repetitive recalls may have the application blocked. It also serves as a loading-display function for the users.
   if (weatherData.loaded) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
                 type="search"
                 placeholder="Enter a city"
                 className="form-control"
+                onChange={handleCityInput}
               />
             </div>
             <div className="col-3">
@@ -46,60 +69,15 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        {/* row mx-1 my-3 */}
-        <div className="row ">
-          <div className="col-7">
-            <div className="row">
-              <div className="col-7 forecast-temp">
-                <img
-                  src={weatherData.icon}
-                  alt={weatherData.description}
-                  className="fluid"
-                />
-                <h1>
-                  {Math.round(weatherData.temperature)}
-                  <span>
-                    <a href="/" className="active-link unit">
-                      &#176;C
-                    </a>
-                    |
-                    <a href="/" className="unit">
-                      &#176;F
-                    </a>
-                  </span>
-                </h1>
-              </div>
-              <div className="col-5 forecast-temp-details">
-                <ul>
-                  <li>Precipitation: {weatherData.precipitation}%</li>
-                  <li>Humidity: {weatherData.humidity}%</li>
-                  <li>Wind: {weatherData.wind} km/h</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="col-5 forecast-city">
-            <h4>{props.defaultCity}</h4>
-            <ul className="forecast-city-details">
-              <li>
-                <FormattedDate date={weatherData.date} />
-              </li>
-              <li className="text-capitalize">{weatherData.description}</li>
-            </ul>
-          </div>
-        </div>
+
+        {/* Component that displays the wheather info's data, passing the weatherData object */}
+        <WeatherInfo data={weatherData} />
       </div>
     );
   }
   // Fetches data once a city is searched or window is refreshed and displays "Loading..." while API is fetching for data.
   else {
-    // api key and url
-    const API_KEY = `87af149f244d27dc04db018463afcdae`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${API_KEY}`;
-
-    // AJAX call
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     // Returns loading while the API is fetching data
     return `Loading...`;
   }
