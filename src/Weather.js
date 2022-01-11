@@ -22,7 +22,7 @@ export default function Weather(props) {
       precipitation: 2,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `https://ssl.gstatic.com/onebox/weather/64/snow_light.png`,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       city: response.data.name,
     });
