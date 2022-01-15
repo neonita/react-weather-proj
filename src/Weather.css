@@ -27,12 +27,24 @@
   font-weight: 400;
 }
 
-.Weather .forecast-temp img {
+/* .Weather .forecast-temp img {
   display: inline-block;
   height: 60px;
   width: 60px;
   vertical-align: top;
   margin-right: 1em;
+} */
+
+/* weather icon */
+.Weather .forecast-temp .wi {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  vertical-align: top;
+  margin-right: 1em;
+  border: 1px solid;
+  font-size: 4rem;
+  color: #0d6efd;
 }
 
 .Weather .forecast-temp span {
