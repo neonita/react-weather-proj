@@ -13,7 +13,7 @@ function App() {
 
         <footer className="mt-3 ms-3">
           This project was coded by{" "}
-          <a href="/" className="primary-link">
+          <a href="https://github.com/neonita" className="primary-link">
             <span
               onMouseOver={change}
               onMouseLeave={(displayedName) =>
@@ -24,7 +24,11 @@ function App() {
             </span>
           </a>{" "}
           and is{" "}
-          <a href="/" target="noopener norefferer" className="primary-link">
+          <a
+            href="https://github.com/neonita/react-weather-proj"
+            target="noopener norefferer"
+            className="primary-link"
+          >
             open-sourced on GitHub
           </a>
         </footer>
