@@ -10,15 +10,15 @@ export default function WeatherInfo(props) {
       <div className="row ">
         <div className="col-7">
           <div className="row">
+            {/* ICON TEMPERATURE UNIT */}
             <div className="col-7 forecast-temp">
-              {/* weather icon component  */}
               <div className="float-left">
                 <FormattedIcons iconId={props.data.id} icon={props.data.icon} />
+                <WeatherTemperature celsius={props.data.temperature} />
               </div>
-
-              <WeatherTemperature celsius={props.data.temperature} />
             </div>
 
+            {/* PRECIPIATION HUMIDITY WIND */}
             <div className="col-5 forecast-temp-details">
               <ul>
                 <li>Precipitation: {props.data.precipitation}%</li>

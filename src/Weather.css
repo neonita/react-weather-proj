@@ -20,20 +20,12 @@
 
 .Weather .forecast-temp h1 {
   color: #202124;
-  font-size: 48px;
+  font-size: 45px;
   line-height: 60px;
   display: inline-block;
   vertical-align: top;
   font-weight: 400;
 }
-
-/* .Weather .forecast-temp img {
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  vertical-align: top;
-  margin-right: 1em;
-} */
 
 /* weather icon */
 .Weather .forecast-temp .wi {
@@ -41,19 +33,19 @@
   height: 60px;
   width: 60px;
   vertical-align: top;
-  margin-right: 1em;
-  border: 1px solid;
-  font-size: 4rem;
+  margin-right: 0em;
+  margin-top: 0.1em;
+  /* border: 1px solid; */
+  font-size: 3.1rem;
   color: #0d6efd;
 }
 
 .Weather .forecast-temp span {
-  color: #20212469;
+  color: #70757a;
   display: inline-block;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   margin-top: 6px;
-  padding-left: 6px;
   vertical-align: top;
   font-weight: 100;
 }
@@ -61,22 +53,18 @@
 .Weather .forecast-temp a:link,
 .Weather .forecast-temp a:visited {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
   padding: 0 0.2em;
   position: relative;
   top: 0.05em;
-  color: #70757a;
-}
-
-.Weather .active-link {
-  color: #202124 !important;
+  color: #20212469;
 }
 
 .Weather .forecast-temp-details {
   color: #70757a;
   display: inline-block;
-  font-size: 12px;
+  font-size: 10.5px;
   line-height: 16px;
   padding-left: 0px;
   padding-top: 6px;
@@ -104,4 +92,11 @@
   /* border: 1px solid red; */
   display: inline-block;
   padding-right: 0.2em;
+}
+
+.WeatherTemperature {
+  max-width: 7em;
+  min-width: 7em;
+  display: inline-block;
+  margin-left: 1em;
 }
