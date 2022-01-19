@@ -1,7 +1,5 @@
 .WeatherForecast {
   text-align: center;
-  /* border: 1px solid lightgrey;
-  border-radius: 3px; */
 }
 
 .WeatherForecast-day {
@@ -26,4 +24,17 @@
 .WeatherForecast-temperature-min {
   opacity: 0.6;
   margin-left: 6px;
+}
+
+.WeatherForecastDay {
+  /* border: 1px solid rgba(211, 211, 211, 0.39); */
+  border-radius: 5px;
+  padding: 0.5em 0em;
+
+  background-color: #0d6dfd05;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.WeatherForecastDay:hover {
+  background-color: #0d6dfd18;
 }

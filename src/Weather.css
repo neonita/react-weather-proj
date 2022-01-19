@@ -33,15 +33,15 @@
   height: 60px;
   width: 60px;
   vertical-align: top;
-  margin-right: 0.2em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
   margin-top: 0.2em;
-  /* border: 1px solid; */
-  font-size: 3.1rem;
+  font-size: 3rem;
   color: #48484a;
 }
 
 .Weather .forecast-temp span {
-  color: #70757a;
+  color: #272727;
   display: inline-block;
   font-size: 14px;
   line-height: 24px;

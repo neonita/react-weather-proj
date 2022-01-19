@@ -55,20 +55,23 @@ export default function Weather(props) {
       <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div class="input-group mb-3">
               <input
                 type="search"
                 placeholder="Enter a city"
                 className="form-control"
                 onChange={handleCityInput}
+                aria-label="Enter a city"
+                aria-describedby="button-addon2"
               />
-            </div>
-            <div className="col-3">
-              <input
+
+              <button
                 type="submit"
-                value="search"
-                className="btn btn-primary w-100"
-              />
+                className="btn btn-outline-secondary"
+                id="button-addon2"
+              >
+                Search
+              </button>
             </div>
           </div>
         </form>
