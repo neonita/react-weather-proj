@@ -16,7 +16,6 @@ function App() {
           <a
             href="https://github.com/neonita"
             className="primary-link"
-            target="_blank"
             rel="noopener noreferrer"
           >
             <span
@@ -32,7 +31,6 @@ function App() {
           <a
             href="https://github.com/neonita/react-weather-proj"
             className="primary-link"
-            target="_blank"
             rel="noopener norefferer"
           >
             open-sourced on GitHub
