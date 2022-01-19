@@ -13,11 +13,12 @@ export default function Weather(props) {
 
   // handle response
   function handleResponse(response) {
-    console.log(response.data);
+    // console.log(response.data);
 
     // set and define the appropriate data for the weaterData javascript object
     setWeatherData({
       loaded: true,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       precipitation: 2,
@@ -74,7 +75,7 @@ export default function Weather(props) {
 
         {/* Component that displays the wheather info's data, passing the weatherData object */}
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   }

@@ -1,5 +1,7 @@
 .WeatherForecast {
   text-align: center;
+  /* border: 1px solid lightgrey;
+  border-radius: 3px; */
 }
 
 .WeatherForecast-day {
@@ -8,8 +10,8 @@
 
 .WeatherForecast-icon {
   font-size: 1.5rem;
-  color: #0d6efd;
-  opacity: 0.6;
+  color: #48484a;
+  opacity: 1;
   margin: 0.2em 0;
 }
 
