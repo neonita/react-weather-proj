@@ -38,6 +38,21 @@
   margin-top: 0.2em;
   font-size: 3rem;
   color: #48484a;
+
+  animation: zoom-in-zoom-out 3s ease-out infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  45% {
+    transform: scale(1.1, 1.1);
+    /* color: #0d6dfd62; */
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 .Weather .forecast-temp span {
@@ -68,7 +83,6 @@
   line-height: 16px;
   padding-left: 0px;
   padding-top: 6px;
-  /* border: 1px solid blue; */
 }
 
 .forecast-city {
@@ -89,7 +103,6 @@
 }
 
 .forecast-temp {
-  /* border: 1px solid red; */
   display: inline-block;
   padding-right: 0.2em;
 }
@@ -99,4 +112,23 @@
   min-width: 7em;
   display: inline-block;
   margin-left: 1em;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
