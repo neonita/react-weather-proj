@@ -8,7 +8,6 @@ export default function WeatherForecast(props) {
   let [forecast, setForecast] = useState(null);
 
   function handleResponse(response) {
-    // console.log(response.data);
     setForecast(response.data.daily);
     setLoaded(true);
   }
@@ -17,24 +16,15 @@ export default function WeatherForecast(props) {
     return (
       <div className="WeatherForecast mt-3">
         <div className="row p-2">
-          <div className="col">
-            <WeatherForecastDay forecastData={forecast[0]} />
-            {/* <div className="WeatherForecast-day">{forecast[0].dt}</div>
-            <div className="WeatherForecast-icon">
-              <FormattedIcons
-                iconId={forecast[0].weather[0].id}
-                icon={forecast[0].weather[0].icon}
-              />
-            </div>
-            <div className="WeatherForecast-temperatures">
-              <span className="WeatherForecast-temperature-max">
-                {Math.round(forecast[0].temp.max)}&#176;
-              </span>
-              <span className="WeatherForecast-temperature-min">
-                {Math.round(forecast[0].temp.min)}&#176;
-              </span>
-            </div> */}
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 6) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay forecastData={dailyForecast} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
